@@ -11,13 +11,13 @@ import io.ktor.client.request.setBody
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 
-class GeminiApiClient(
+open class GeminiApiClient(
     private val httpClient: HttpClient
 ) {
     private val apiKey = BuildConfig.API_KEY
     private val baseUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
 
-    suspend fun generateContent(contents: List<Content>): Result<GeminiResponse> {
+    open suspend fun generateContent(contents: List<Content>): Result<GeminiResponse> {
         return try {
             val response: GeminiResponse = httpClient.post("$baseUrl?key=$apiKey") {
                 contentType(ContentType.Application.Json)
