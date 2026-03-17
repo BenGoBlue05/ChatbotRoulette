@@ -21,6 +21,15 @@ develocity {
         termsOfUseAgree.set("yes")
     }
 }
+buildCache {
+    local {
+        isEnabled = true
+    }
+    remote(develocity.buildCache) {
+        isEnabled = true
+        isPush = true
+    }
+}
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
