@@ -7,4 +7,13 @@ plugins {
     alias(libs.plugins.google.devtools.ksp) apply false
     alias(libs.plugins.hilt.android) apply false
     alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.kover)
+}
+
+dependencies {
+    kover(project(":app"))
+    kover(project(":core"))
+    kover(project(":data"))
+    kover(project(":domain"))
+    kover(project(":feature"))
 }
