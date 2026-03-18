@@ -45,7 +45,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install diff-cover
-        run: pip install diff-cover
+        run: python -m pip install diff-cover==9.0.0
 
       - name: Check diff coverage (90% on changed code)
         run: |
